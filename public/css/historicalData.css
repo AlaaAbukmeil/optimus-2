@@ -1,0 +1,25 @@
+.search-area-data-form{
+    margin-top: 20px;
+}
+.rdrDefinedRangesWrapper{
+    display: none;
+}
+.search-bar-button-group{
+    display: flex;
+}
+.search-bar-button-2{
+    margin-left: 10px;
+}
+
+  
+ 
+@media (max-width: 1000px) {
+    .form-part-container-1{
+        width: 100%;
+    }
+    .form-questions-container{
+        display: block;
+    }
+    
+
+}

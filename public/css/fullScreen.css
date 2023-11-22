@@ -1,0 +1,16 @@
+.boxes-container-1-full-screen,
+.boxes-container-2-full-screen {
+    height: 50vh !important;
+    margin: auto;
+    display: flex;
+}
+
+.boxes-container-1-full-screen .box-1,
+.boxes-container-1-full-screen .box-2,
+.boxes-container-2-full-screen .box-3,
+.boxes-container-2-full-screen .box-4 {
+    height: 48vh !important;
+}
+.full-screen-container{
+    cursor: pointer;
+}

@@ -1,0 +1,59 @@
+.metrics-title {
+    text-align: left;
+    padding: 10px 25px 10px 25px;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.metrics {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
+}
+.metrics-container{
+    width: 100%;
+}
+.full-screen-area{
+    margin-top: 20px;
+    margin-bottom: -20px;
+    font-weight: bold;
+}
+.metric-box {
+    width: 19%;
+    margin: 10px 5px 10px 5px;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: left;
+
+
+}
+
+.metric-value {
+    text-align: right;
+}
+.charts{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.chart-container{
+    width: 30%;
+    margin: auto;
+    margin-bottom: 10px;
+}
+.charts-mini-container{
+    width: 100%;
+}
+@media (max-width:1000px) {
+    .metrics-title {
+        font-size: 20px
+    }
+
+    .metric-box {
+        width: 45%;
+    }
+    .chart-container{
+        width: 95%;
+    }
+}

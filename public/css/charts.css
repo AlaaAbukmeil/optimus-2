@@ -1,0 +1,9 @@
+.bar-chart-container{
+    max-height: 250px;
+    width: 100%;
+    align-items: center ;
+}
+.chart-occ{
+    margin: 0 auto;
+    width: 100%;
+}

@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap');
+
+
+.welcome-title {
+    font-size: 30px;
+    display: flex;
+}
+
+.welcome-container {
+    padding: 12px;
+}
+
+.welcome-title-1,
+.welcome-title-2,
+.welcome-title-3 {
+    margin: 0 5px;
+    text-align: left;
+}
+
+.welcome-title-2 {
+    color: blue;
+}
+
+.welcome-title-3 {
+    color: rgb(255, 201, 8);
+}
+
+.box-1,
+.box-2,
+.box-3,
+.box-4 {
+    width: 48%;
+    border-radius: 5px;
+    height: 350px;
+    display: flex;
+    background-color: white;
+    margin: auto;
+    padding: 24px;
+}
+
+.box-4 {
+    display: block;
+}
+
+.box-3,
+.box-4 {
+    height: 380px;
+}
+
+.box-1-1,
+.box-1-2,
+.box-4-1 {
+    margin: auto;
+    text-align: center;
+}
+
+.box-4-1 {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box-1-2 {
+    width: 70%;
+}
+
+.box-1-1 {
+    width: 30%;
+}
+
+.box-1-1-text {
+    font-size: 30px;
+
+}
+
+.box-1-2-text {
+    font-size: 70px;
+
+}
+
+.boxes-container-1,
+.boxes-container-2 {
+    display: flex;
+}
+
+.boxes-container-2 {
+    margin-top: 20px;
+}
+
+.boxes-container-1 p,
+.boxes-container-2 p {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 600;
+}
+
+.box-1-2-1,
+.box-1-2-2,
+.box-1-2-3,
+.box-1-2-4,
+.box-1-2-5,
+.box-1-2-6 {
+    width: 30%;
+    /* display: flex; */
+    margin: 10px 5px;
+    padding: 10px;
+    border-radius: 8px;
+    height: 105px;
+
+}
+
+.box-1-2-1 {
+    background-color: #95E9A7;
+}
+
+.box-1-2-2 {
+    background-color: #95E9A7;
+}
+
+.box-1-2-3 {
+    background-color: #95E9A7;
+}
+
+.box-1-2-4 {
+    background-color: #ff9f40;
+
+}
+
+.box-1-2-5 {
+    background-color: #fc846533;
+    ;
+
+}
+
+.box-1-2-6 {
+    background-color: #ff9f40;
+
+}
+
+.box-1-2 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.param-text {
+    color: #737373;
+    margin: 10px auto;
+    font-size: 10px;
+    text-align: center;
+}
+
+.param-img {
+    height: 30px;
+    text-align: center;
+    width: auto;
+}
+
+.param-text-value {
+    font-weight: bold;
+    font-size: 10px;
+}
+
+.occupancy-box-1 {
+    display: flex;
+    width: 100%;
+}
+
+.occupancy-box-1 p {
+    margin-bottom: 0;
+}
+
+.occupancy-box-1-1,
+.occupancy-box-1-2 {
+    margin: 0 auto auto auto;
+    width: 50%;
+}
+
+.occupancy-box-1-2 p {
+    text-align: right;
+}
+
+.occupancy-box-1-1 p {
+    text-align: left;
+}
+
+.occ-status-text {
+    color: #95E9A7;
+}
+
+.box-2,
+.box-3 {
+    flex-wrap: wrap;
+}
+
+.occupancy-box-2 {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.search-area-form {
+    background-color: white;
+    margin-bottom: 20px;
+    width: 98%;
+    margin: auto auto 10px auto;
+    padding: 15px;
+    border-radius: 5px;
+    display: block;
+
+}
+
+.search-area-form-button {
+    display: flex;
+    width: 98%;
+    margin-bottom: 10px;
+}
+
+.form-questions-container {
+    display: flex;
+}
+
+.form-part-container-1 {
+    display: block;
+    width: 25%;
+    padding: 5px
+}
+
+.form-text-question {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: left;
+}
+
+.search-input {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #cdcdcd;
+    padding: 5px
+}
+
+.search-area-form-title p {
+    font-size: 35px;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: left;
+
+}
+
+.full-screen-btn {
+    text-align: right;
+    margin-left: auto
+}
+
+.form-search-button {
+    display: flex;
+    margin: 10px 0 0 auto;
+}
+
+@media (max-width: 1000px) {
+
+    .box-1,
+    .box-2,
+    .box-3,
+    .box-4 {
+        width: 100%;
+        margin: auto;
+        text-align: center;
+        display: block;
+        height: 390px;
+        margin-bottom: 20px !important
+    }
+
+    .box-1-1,
+    .box-1-2,
+    .box-3,
+    .box-4 {
+        width: 100%;
+        margin: auto;
+        text-align: center;
+    }
+
+    .boxes-container-1,
+    .boxes-container-2 {
+        display: block;
+    }
+
+    .param-text {
+        font-size: 8px;
+    }
+
+    .box-1-1 p {
+        font-size: 25px;
+    }
+
+    .welcome-title {
+        font-size: 25px;
+        flex-wrap: wrap;
+    }
+}
