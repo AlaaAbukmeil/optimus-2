@@ -27,56 +27,45 @@ function SearchBar(props: any) {
       props.setData(data);
     } catch (error) {}
   }
-  
+
   return (
     <form action="" className="search-area-form search-area-data-form">
       <div className="search-area-form-title">
-        <p>Search Area</p>
+        <p>Search Room</p>
       </div>
-      <div className="form-questions-container">
-        <div className="form-part-container-1">
+      <div className="form-questions-container form-calendar-container">
+        <div className="form-part-container-1 form-calendar-part">
           <p className="form-text-question">City</p>
           <select title="city" className="search-input" required>
             <option value="hk">Hong Kong</option>
             <option value="sg">Singapore</option>
           </select>
         </div>
-        <div className="form-part-container-1">
+        <div className="form-part-container-1 form-calendar-part">
           <p className="form-text-question">Building</p>
           <select title="building" className="search-input" required>
             <option value="hk">W Lux</option>
             <option value="sg">Jebsen</option>
           </select>
         </div>
-        <div className="form-part-container-1">
+        <div className="form-part-container-1 form-calendar-part">
           <p className="form-text-question">Floor</p>
           <select title="floor" className="search-input" required>
             <option value="hk">3rd</option>
             <option value="sg">5th</option>
           </select>
         </div>
-        <div className="form-part-container-1">
-          <p className="form-text-question">Area</p>
-          <select title="area" className="search-input" required>
-            <option value="hk">Kitchen</option>
-            <option value="sg">Office</option>
-          </select>
-        </div>
-        <div className="form-part-container-1">
-          <p className="form-text-question">Data Type</p>
-          <select title="area" className="search-input" id="dataType" required>
-            <option value="hk">Occupancy</option>
-            <option value="sg">Air Quality</option>
-            <option value="sg">Bookings</option>
+        <div className="form-part-container-1 form-calendar-part">
+          <p className="form-text-question">Room</p>
+          <select title="floor" className="search-input" required>
+            <option value="hk">3rd</option>
+            <option value="sg">5th</option>
           </select>
         </div>
       </div>
-      
+
       <div className="search-bar-button-group">
-        
-        <button className="btn btn-primary form-search-button">
-          Filter
-        </button>
+        <button className="btn btn-primary form-search-button">Search</button>
       </div>
     </form>
   );

@@ -23,7 +23,7 @@ function Box4(props: any) {
           <p className="occ-status-text">Status: Available</p>
         </div>
       </div>
-      <div className="calendar-container">
+      <div className="calendar-react-container">
         <Calendar
           localizer={localizer}
           defaultDate={new Date()}

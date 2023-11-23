@@ -45,13 +45,23 @@ function NavBar(props: any) {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Calander
+              <a className="nav-link" href="/calendar">
+                Calendar
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="/users-access">
+                Users Access
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">
-                Users Access
+                Automation
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#">
+                Alerts
               </a>
             </li>
             <li className="nav-item">

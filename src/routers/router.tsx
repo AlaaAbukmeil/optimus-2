@@ -6,6 +6,8 @@ import HistoricalData from "../components/historicalData/main";
 import Analytics from "../components/analytics/main";
 import AnalyticsFullScreen from "../components/analytics/fullScreen";
 import DeviceManagement from "../components/deviceManagement/main";
+import Calendar from "../components/calendar/main";
+import UsersAccess from "../components/userAccess/main";
 const router = createBrowserRouter([
   {
     path: "/dashboard",
@@ -35,6 +37,14 @@ const router = createBrowserRouter([
   {
     path: "/device-management",
     element: <DeviceManagement />,
+    errorElement: <ErrorPage />,
+  },{
+    path: "/calendar",
+    element: <Calendar />,
+    errorElement: <ErrorPage />,
+  },{
+    path: "/users-access",
+    element: <UsersAccess />,
     errorElement: <ErrorPage />,
   },
 ]);

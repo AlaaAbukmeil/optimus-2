@@ -1,69 +1,25 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.rbc-event {
-
-  background-color: red !important;
-
-}
-
-.rbc-time-content {
-  overflow-y: scroll;
-  /* For vertical scroll, use overflow-x for horizontal scroll */
-  scrollbar-width: none;
-  /* For Firefox */
-  -ms-overflow-style: none;
-}
-
-.rbc-day-slot rbc-time-column rbc-now rbc-today {
-  /* background-color: white !important */
-}
-
-.App-header {
-  background-color: white;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.rbc-day-slot .rbc-events-container {
-  background-color: rgba(255, 255, 255, 0.381);
-}
-
 .calendar-container {
+  width: 98%;
+  border-radius: 5px;
+  height: 80vh;
   background-color: white;
-  width: 100%;
+  margin: auto;
+  margin-top: 20px;
+  padding: 24px;
 }
-
-.App-title {
-  font-size: 1.5em;
+.calendar{
+    height: 70vh !important
 }
-
-.App-intro {
-  font-size: large;
+.calendar-container-1{
+    height: 60vh;
 }
-
-.box-4-calendar {
-  height: 300px !important;
-  width: 100%;
+.calendar-title{
+    text-align: left;
+    font-weight: bold;
 }
-
-.rbc-btn-group {
-  display: none !important;
+.form-calendar-part{
+    width: 23%;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
+.form-calendar-container{
+    justify-content: space-between;
 }
