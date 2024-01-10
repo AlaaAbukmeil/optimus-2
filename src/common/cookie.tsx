@@ -21,17 +21,21 @@ export const postRequestOptions: any = {
   headers: { Authorization: `Bearer ${token}` }
 };
 
+export let baseUrl = "http://localhost:8080/api/web/"
+
 export const handleAuth = (status: number) => {
   if (status == 401) {
-    window.location.href = "/login";
-  } else if(status == 403){
-    let warning = window.alert("You don't have access to create/delete/edit, please contact ally to review")
-    window.location.reload()
+    localStorage.delete("token")
+    window.location.href = "/";
+  } else if(status == 404){
+    let warning = window.alert("Unexpected error, please contact PWWP to review")
+    localStorage.delete("token")
+    window.location.href = "/";
   }
 };
 
 export async function checkAuth(){
-  let url = "https://capital-trade-396911.de.r.appspot.com/api/web/auth";
+  let url = baseUrl + "auth";
   
     fetch(url, getRequestOptions).then((res) => {
       handleAuth(res.status);
@@ -39,6 +43,8 @@ export async function checkAuth(){
     });
   
 }
+
+
 
 
 export default {};

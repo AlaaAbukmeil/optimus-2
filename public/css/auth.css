@@ -1,0 +1,40 @@
+.login-card{
+    background-color: white;
+    text-align: left;
+    padding: 24px;
+    border-radius: 12px;
+    margin-top: 10px;
+}
+.formTextInput{
+    margin-bottom: 10px;
+    width: 95%;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 5px;
+
+}
+.title-container{
+    text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+}
+.title-container h1{
+    font-weight: bold;
+}
+.login-card div h4{
+    font-weight: normal;
+}
+.login-btn{
+    display: flex;
+    margin-left: auto;
+    background-color: rgb(255, 201, 8);
+    color: white;
+}
+.login-btn:hover{
+    background-color: blue;
+    color: white
+    
+}
+.login-text{
+    margin-top: 50px;
+}

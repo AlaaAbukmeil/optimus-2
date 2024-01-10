@@ -7,14 +7,12 @@
   justify-content: space-between;
 }
 .device-container {
-  width: 30%;
+  width: 33%;
   padding: 24px;
   background-color: white;
   border-radius: 5px;
 }
-.device-container:hover {
-  filter: drop-shadow(0px 5px 4px #1018280f);
-}
+
 .device-image {
   height: 100px;
 }
@@ -60,10 +58,141 @@
   align-items: center;
   justify-content: center;
   z-index: 9999;
+
+  
+}
+.device-info-container-1:hover{
+  cursor: pointer;
 }
 .device-info-container-2 {
   width: 80%;
 }
 .device-metrics{
     margin: 0px
+}
+.device-management-buttons{
+  width: 98%;
+  margin-bottom: 10px;
+}
+.add-device-svg{
+  width: 70px;
+  position: absolute;
+  bottom: 10%;
+  right: 20px;
+  border-radius: 100%;
+ 
+}
+.add-device-svg:hover{
+  cursor: pointer;
+}
+
+.add-device-container {
+  width: 30%;
+  padding: 24px;
+  background-color: white;
+  border-radius: 5px;
+  cursor: auto;
+
+}
+
+
+.add-device-container-2 {
+  width: 80%;
+  margin: auto;
+  margin-top: 15vh;
+  /* overflow-x: "auto"; */
+  display: flex;
+  flex-wrap: wrap;
+  height: 500px;
+  z-index: 5
+}
+.table-add-devices-form{
+  width: 100%;
+}
+.add-device-btn{
+  position: absolute !important;  /* or use 'fixed' if you want the button to stay in the same place even when scrolling vertically */
+  right: 12%;
+  z-index: 6
+  
+}
+.select-device-type{
+  height: 100%;
+  width: 100%;
+}
+hr{
+  border-top: 1px solid black;
+  width: 100%;
+  
+}
+.device-management-buttons-1{
+  margin-top: -70px;
+  height: 50px;
+}
+.upload-file-input{
+  margin: auto;
+  width: 100%;
+}
+.add-device-btn-1{
+  margin-left:auto
+}
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  /* margin: 0; */
+  /* padding: 0; */
+  width: 100%;
+  table-layout: fixed;
+
+}
+
+table caption {
+  font-size: 20px;
+  margin: 0.5em 0 0.75em;
+}
+
+table tr {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: 0.35em;
+}
+
+.table-body:hover {
+  background-color: #f8f8f866;
+}
+
+table th,
+table td {
+  padding: 0.625em;
+  text-align: center;
+  font-size: 12px;
+  width: 240px !important;
+  /* display: block; */
+  /* height: 100px; */
+}
+
+.form-add-device{
+  width: 100%;
+  text-align: left;
+}
+.device-management-buttons-2{
+  position: absolute !important;
+  right: 12%;
+  z-index: 6;
+}
+.edit-location-container{
+  height: 200px
+}
+.delete-location-container{
+  height: 230px
+}
+.paramDisabled{
+  background-color: grey;
+}
+.input-param{
+  width: 170px;
+  height: 20px;
+}
+.delete-location-text{
+  text-align: left;
+  color: red
 }

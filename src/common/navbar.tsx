@@ -1,4 +1,10 @@
+import { checkAuth } from "./cookie";
 function NavBar(props: any) {
+  function handleLogOut(event: any) {
+    localStorage.removeItem("token");
+    window.location.href = "/";
+  }
+  checkAuth()
   return (
     <div className="sidebar-navbar">
       <button
@@ -21,7 +27,7 @@ function NavBar(props: any) {
         <div className="offcanvas-header">
           <img src="/photos/optimusLogo.png" className="logo-img" alt="" />
         </div>
-        <hr className="navbar-hr"/>
+        <hr className="navbar-hr" />
         <div className="offcanvas-body">
           <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li className="nav-item">
@@ -40,15 +46,17 @@ function NavBar(props: any) {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/device-management">
-                Device Mangement
-              </a>
-            </li>
-            <li className="nav-item">
               <a className="nav-link" href="/calendar">
                 Calendar
               </a>
             </li>
+            <li className="nav-item">
+              <a className="nav-link" href="/device-management">
+                Device Management
+              </a>
+            </li>
+            
+
             <li className="nav-item">
               <a className="nav-link" href="/users-access">
                 Users Access
@@ -66,6 +74,11 @@ function NavBar(props: any) {
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">
+                Logs
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#">
                 Developer Options
               </a>
             </li>
@@ -77,8 +90,13 @@ function NavBar(props: any) {
           </ul>
           <hr />
           <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
-            <li className="nav-item">
-              <a className="nav-link" aria-current="page" href="#">
+          <li className="nav-item">
+              <a className="nav-link" href="#">
+                Account
+              </a>
+            </li>
+            <li>
+              <a className="dropdown-item nav-link" aria-current="page" onClick={(event) => handleLogOut(event)}>
                 Log Out
               </a>
             </li>

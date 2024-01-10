@@ -8,6 +8,7 @@ import AnalyticsFullScreen from "../components/analytics/fullScreen";
 import DeviceManagement from "../components/deviceManagement/main";
 import Calendar from "../components/calendar/main";
 import UsersAccess from "../components/userAccess/main";
+import Login from "../components/auth/auth";
 const router = createBrowserRouter([
   {
     path: "/dashboard",
@@ -46,7 +47,11 @@ const router = createBrowserRouter([
     path: "/users-access",
     element: <UsersAccess />,
     errorElement: <ErrorPage />,
-  },
+  },{
+    path: "/",
+    element: <Login />,
+    errorElement: <ErrorPage />,
+  }
 ]);
 
 export default router;
