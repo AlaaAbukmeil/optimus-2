@@ -88,16 +88,16 @@ function AddDevice(props: any) {
         >
           <tbody>
             <tr className="table-header">
-              {props.tableTitlesAddDevice.map((title: string, index: number) => (
+              {props.tableTitlesDevice.map((title: string, index: number) => (
                 <th key={index}>{title}</th>
               ))}
             </tr>
 
             <tr>
-              {props.tableTitlesAddDevice.map((title: string, index: number) => (
+              {props.tableTitlesDevice.map((title: string, index: number) => (
                 <td key={index}>
                   {title != "Type" ? (
-                    <input type="text" name={props.tableTitlesDictionary[title]} required className="input-param"></input>
+                    <input type="text" name={props.tableTitlesDictionary[title]} placeholder="No special characters" required className="input-param"></input>
                   ) : (
                     <select className="select-device-type input-param" name={props.tableTitlesDictionary[title]}>
                       <option>IAQ</option>
@@ -116,6 +116,7 @@ function AddDevice(props: any) {
           </button>
         </div>
       </form>
+
       <hr />
       <div className="search-bar-button-group device-management-buttons  device-management-buttons-1">
         <form className="form-add-device" onSubmit={(event) => handleBulkUploadSubmit(event)}>

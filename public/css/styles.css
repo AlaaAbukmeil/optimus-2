@@ -86,8 +86,9 @@ h4 {
   cursor: pointer;
 }
 .droppable-element {
-  display: contents;
+  
 }
+
 /* style.css */
 .fadeIn {
   animation: fadeInAnimation ease 0.5s;

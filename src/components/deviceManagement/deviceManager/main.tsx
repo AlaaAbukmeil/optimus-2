@@ -7,23 +7,22 @@ import ContextMenu from "./contextMenu";
 import EditDevice from "./editDevice";
 import DeleteLocation from "./deleteDevice";
 import AddDevice from "./addDevice";
-import { da } from "date-fns/locale";
 
 function DeviceManager() {
   let tableTitlesDictionary: any = {
     Name: "name",
     Status: "status",
     "Last Seen": "last seen",
-    City: "city",
-    Building: "building",
-    Floor: "floor",
-    Area: "area",
+    City: "cityId",
+    Building: "buildingId",
+    Floor: "floorId",
+    Area: "areaId",
     Type: "type",
     _id: "_id",
   };
   let tableTitles = Object.keys(tableTitlesDictionary);
 
-  let tableTitlesDevice = ["Name", "Type"];
+  let tableTitlesDevice = ["Name", "Type", "_id"];
 
   let [data, setData] = useState([]);
   let [addDevice, setAddDevice] = useState(false);
@@ -56,7 +55,7 @@ function DeviceManager() {
         return res.json();
       })
       .then((data) => {
-        console.log(data, "test");
+        
         setData(data);
         setRequestStatus(false);
       });

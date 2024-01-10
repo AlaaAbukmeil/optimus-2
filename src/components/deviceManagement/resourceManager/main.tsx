@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from "react";
-import { baseUrl, getRequestOptions, handleAuth } from "../../../common/cookie";
+import { baseUrl, getRequestOptions, handleAuth, postRequestOptions } from "../../../common/cookie";
 import Loader from "../../../common/loader";
 import * as XLSX from "xlsx";
 import RequestStatus from "../../../common/requestStatus";
@@ -9,6 +9,7 @@ import DeleteLocation from "./deleteLocation";
 import AddLocation from "./addLocation";
 
 import { DraggableComponent, DroppableElement } from "../../../common/multi-use";
+import axios from "axios";
 
 function ResourceManager() {
   let tableTitlesDictionary: any = {
@@ -25,6 +26,7 @@ function ResourceManager() {
   let tableTitlesAddLocation = ["City", "Building", "Floor", "Area", "Type", "Booking Enabled"];
 
   let [data, setData] = useState([]);
+  let [devices, setDevices] = useState([]);
   let [addLocation, setAddLocation] = useState(false);
   const [request, setRequestStatus] = useState(false);
   let [error, setError] = useState<any>(null);
@@ -54,8 +56,9 @@ function ResourceManager() {
         return res.json();
       })
       .then((data) => {
-        setData(data);
-        for (let index = 0; index < data.length; index++) {
+        setData(data.structure);
+        setDevices(data.devices);
+        for (let index = 0; index < data.structure.length; index++) {
           expandedIndex[index] = 0;
           setExpandedIndex(expandedIndex);
         }
@@ -96,9 +99,14 @@ function ResourceManager() {
     }
   }, []);
 
-  const handleDrop = (draggedId: any, dropTargetId: any) => {
+  const handleDrop = async (draggedId: any, dropTargetId: any) => {
     // Handle the drop logic, for example, reordering the rows
-    console.log("test");
+
+    let param = { deviceId: draggedId, locationId: dropTargetId };
+    let url = baseUrl + "assign-device";
+    let action = await axios.post(url, param, postRequestOptions);
+    handleAuth(action.status);
+    window.location.reload();
   };
 
   function handleExpandRow(event: any, index: number) {
@@ -119,7 +127,17 @@ function ResourceManager() {
 
   return (
     <div onClick={hideMenue} ref={contextMenuRef}>
-      <DraggableComponent id="test">TEST </DraggableComponent>
+      <DroppableElement rowId={"unassign"} onDrop={handleDrop}  handleExpandRow={handleExpandRow}>
+        <div >
+          {devices
+            // .filter((device: any, index: any) => !(device["cityId"] && device["buildingId"] && device["floorId"] && device["areaId"]))
+            .map((device: any, index) => (
+              <DraggableComponent id={device["_id"]}>
+                {device.name} ({device.type})
+              </DraggableComponent>
+            ))}
+        </div>
+      </DroppableElement>
 
       <div className="table-responsive">
         <table className="table table-hover table-device-structure" id="table-id">
@@ -132,20 +150,25 @@ function ResourceManager() {
 
             {data.length > 0 ? (
               data.map((location: any, index: any) => (
-                <DroppableElement key={index} rowId={index} onDrop={handleDrop} onContextMenu={(event: any) => handleContextMenu(event, location)} index={index} handleExpandRow={handleExpandRow}>
-                  <tr>
+                <>
+                  <DroppableElement key={index} rowId={location["_id"]} onDrop={handleDrop} onContextMenu={(event: any) => handleContextMenu(event, location)} index={index} handleExpandRow={handleExpandRow}>
                     {tableTitles.map((title: string, index: number) => (
-                      <td>
-                        <DraggableComponent id={location["_id"]}>{location[tableTitlesDictionary[title]] ? location[tableTitlesDictionary[title]].toString() : ""}</DraggableComponent>
-                      </td>
+                      <td>{location[tableTitlesDictionary[title]] ? location[tableTitlesDictionary[title]].toString() : ""}</td>
                     ))}
-                  </tr>
-                 
-                    <div className="fadeIn" style={{ display: expandedIndex[index] != 0 ? "block" : "none" }}>
-                      <p>device</p>
-                    </div>
-                  
-                </DroppableElement>
+                  </DroppableElement>
+
+                  <div className="fadeIn" style={{ display: expandedIndex[index] != 0 ? "block" : "none" }}>
+                    {devices
+                      .filter((device: any, index: any) => device["locationId"] == location["_id"])
+                      .map((device: any, index: any) => (
+                        <td>
+                          <DraggableComponent id={device["_id"]}>
+                            {device.name} ({device.type})
+                          </DraggableComponent>
+                        </td>
+                      ))}
+                  </div>
+                </>
               ))
             ) : (
               <></>

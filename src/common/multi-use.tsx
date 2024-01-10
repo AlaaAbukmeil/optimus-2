@@ -10,13 +10,13 @@ export const DraggableComponent = ({ id, children }: any) => {
   }));
 
   return (
-    <div ref={drag} style={{ opacity: isDragging ? 0.5 : 1 }}>
+    <div ref={drag} style={{ opacity: isDragging ? 0.5 : 1 }} className="unassigned-device btn btn-secondary">
       {children}
     </div>
   );
 };
 
-export const DroppableElement = ({ rowId, onDrop, onContextMenu,index,handleExpandRow, children }: any) => {
+export const DroppableElement = ({ rowId, onDrop, onContextMenu, index, handleExpandRow, children }: any) => {
   const [{ isOver }, drop] = useDrop(() => ({
     accept: "BOX",
     drop: (item: any, monitor: any) => {
@@ -26,10 +26,11 @@ export const DroppableElement = ({ rowId, onDrop, onContextMenu,index,handleExpa
       isOver: monitor.isOver(),
     }),
   }));
+  
   return (
-    <div className="droppable-element" ref={drop} style={{ background: isOver ? "#EFD9A0" : "white" }} onContextMenu={onContextMenu} onClick={(event) => handleExpandRow(event, index)}>
+    <tr ref={drop} style={{ background: isOver ? "#EFD9A0" : "white" }} onContextMenu={onContextMenu} onClick={(event) => handleExpandRow(event, index)}>
       {children}
-    </div>
+    </tr>
   );
 };
 

@@ -66,7 +66,7 @@ function EditLocation(props: any) {
                 {props.tableTitles.map((title: string, index: number) => (
                   <td key={index}>
                     {title != "Type" ? (
-                      title != "Booking_enabled" ? (
+                      title != "Booking Enabled" ? (
                         title == "_id" ? (
                           <input type="text" value={props.data[props.tableTitleExpectedNames[title]]} name={props.tableTitleExpectedNames[title]} className="paramDisabled input-param"></input>
                         ) : (
@@ -74,14 +74,14 @@ function EditLocation(props: any) {
                         )
                       ) : (
                         <select className="select-device-type input-param" name={props.tableTitleExpectedNames[title]}>
-                          <option>{props.tableTitleExpectedNames[title].toLowerCase() == "true" ? "True" : "False"}</option>
-                          <option>{props.tableTitleExpectedNames[title].toLowerCase() == "false" ? "False" : "True"}</option>
+                          <option>{props.data[props.tableTitleExpectedNames[title]].toLowerCase() == "true" ? "True" : "False"}</option>
+                          <option>{props.data[props.tableTitleExpectedNames[title]].toLowerCase() == "true" ? "False" : "True"}</option>
                         </select>
                       )
                     ) : (
                       <select className="select-device-type input-param" name={props.tableTitleExpectedNames[title]}>
-                        <option>{props.tableTitleExpectedNames[title].toLowerCase() == "room" ? "Room" : "Desk"}</option>
-                        <option>{props.tableTitleExpectedNames[title].toLowerCase() == "desk" ? "Desk" : "Room"}</option>
+                        <option>{props.data[props.tableTitleExpectedNames[title]].toLowerCase() == "room" ? "Room" : "Desk"}</option>
+                        <option>{props.data[props.tableTitleExpectedNames[title]].toLowerCase() == "room" ? "Desk" : "Room"}</option>
                       </select>
                     )}
                   </td>
