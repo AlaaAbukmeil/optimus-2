@@ -16,7 +16,7 @@ export const DraggableComponent = ({ id, children }: any) => {
   );
 };
 
-export const DroppableElement = ({ rowId, onDrop, onContextMenu, index, handleExpandRow, children }: any) => {
+export const DroppableRow = ({ rowId, onDrop, onContextMenu, index, handleExpandRow, children }: any) => {
   const [{ isOver }, drop] = useDrop(() => ({
     accept: "BOX",
     drop: (item: any, monitor: any) => {
@@ -28,9 +28,26 @@ export const DroppableElement = ({ rowId, onDrop, onContextMenu, index, handleEx
   }));
   
   return (
-    <tr ref={drop} style={{ background: isOver ? "#EFD9A0" : "white" }} onContextMenu={onContextMenu} onClick={(event) => handleExpandRow(event, index)}>
+    <tr ref={drop} style={{ background: isOver ? "#EFD9A0" : "white" }} className="droppable-row" onContextMenu={onContextMenu} onClick={(event) => handleExpandRow(event, index)}>
       {children}
     </tr>
+  );
+};
+export const DroppableElement= ({ rowId, onDrop, onContextMenu, index, handleExpandRow, children }: any) => {
+  const [{ isOver }, drop] = useDrop(() => ({
+    accept: "BOX",
+    drop: (item: any, monitor: any) => {
+      onDrop(item.id, rowId);
+    },
+    collect: (monitor: any) => ({
+      isOver: monitor.isOver(),
+    }),
+  }));
+  
+  return (
+    <div ref={drop} style={{ background: isOver ? "#EFD9A0" : "white" }} className="droppable-row" onContextMenu={onContextMenu} onClick={(event) => handleExpandRow(event, index)}>
+      {children}
+    </div>
   );
 };
 

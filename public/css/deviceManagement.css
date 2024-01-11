@@ -49,40 +49,32 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(
-    0,
-    0,
-    0,
-    0.5
-  ); /* This gives a semi-transparent black background */
+  background: rgba(0, 0, 0, 0.5); /* This gives a semi-transparent black background */
   align-items: center;
   justify-content: center;
   z-index: 9999;
-
-  
 }
-.device-info-container-1:hover{
+.device-info-container-1:hover {
   cursor: pointer;
 }
 .device-info-container-2 {
   width: 80%;
 }
-.device-metrics{
-    margin: 0px
+.device-metrics {
+  margin: 0px;
 }
-.device-management-buttons{
+.device-management-buttons {
   width: 98%;
   margin-bottom: 10px;
 }
-.add-device-svg{
+.add-device-svg {
   width: 70px;
   position: absolute;
   bottom: 10%;
   right: 20px;
   border-radius: 100%;
- 
 }
-.add-device-svg:hover{
+.add-device-svg:hover {
   cursor: pointer;
 }
 
@@ -92,9 +84,7 @@
   background-color: white;
   border-radius: 5px;
   cursor: auto;
-
 }
-
 
 .add-device-container-2 {
   width: 80%;
@@ -104,36 +94,34 @@
   display: flex;
   flex-wrap: wrap;
   height: 500px;
-  z-index: 5
+  z-index: 5;
 }
-.table-add-devices-form{
+.table-add-devices-form {
   width: 100%;
 }
-.add-device-btn{
-  position: absolute !important;  /* or use 'fixed' if you want the button to stay in the same place even when scrolling vertically */
+.add-device-btn {
+  position: absolute !important; /* or use 'fixed' if you want the button to stay in the same place even when scrolling vertically */
   right: 12%;
-  z-index: 6
-  
+  z-index: 6;
 }
-.select-device-type{
+.select-device-type {
   height: 100%;
   width: 100%;
 }
-hr{
+hr {
   border-top: 1px solid black;
   width: 100%;
-  
 }
-.device-management-buttons-1{
+.device-management-buttons-1 {
   margin-top: -70px;
   height: 50px;
 }
-.upload-file-input{
+.upload-file-input {
   margin: auto;
   width: 100%;
 }
-.add-device-btn-1{
-  margin-left:auto
+.add-device-btn-1 {
+  margin-left: auto;
 }
 table {
   border: 1px solid #ccc;
@@ -143,7 +131,6 @@ table {
   width: 100%;
   table-layout: fixed;
   overflow-y: auto;
-
 }
 
 table caption {
@@ -171,39 +158,65 @@ table td {
   /* height: 100px; */
 }
 
-.form-add-device{
+.form-add-device {
   width: 100%;
   text-align: left;
 }
-.device-management-buttons-2{
+.device-management-buttons-2 {
   position: absolute !important;
   right: 12%;
   z-index: 6;
 }
-.edit-location-container{
-  height: 200px
+.edit-location-container {
+  height: 200px;
 }
-.delete-location-container{
-  height: 230px
+.delete-location-container {
+  height: 230px;
 }
-.paramDisabled{
+.paramDisabled {
   background-color: grey;
 }
-.input-param{
+.input-param {
   width: 170px;
   height: 20px;
 }
-.delete-location-text{
+.delete-location-text {
   text-align: left;
-  color: red
+  color: red;
 }
-.unassigned-devices{
+.unassigned-devices {
   display: flex;
   flex-wrap: wrap;
   background-color: rgb(240, 239, 235);
 }
-.unassigned-device{
+.unassigned-device {
   margin: 15px;
   width: 200px;
   background-color: #ccc;
+}
+.title-unassigned {
+  text-align: left;
+  margin-left: 20px;
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.arrow {
+  width: 60px;
+  margin-left: auto;
+  display: block;
+  padding-top: 20px;
+  padding-right: 20px;
+}
+.arrow:hover{
+  cursor: pointer;
+}
+.unassigned-devices{
+  width: 100%;
+  
+}
+.unassigned-container{
+  display: flex;
+  flex-wrap: wrap;
 }

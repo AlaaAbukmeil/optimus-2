@@ -96,13 +96,15 @@ function AddDevice(props: any) {
             <tr>
               {props.tableTitlesDevice.map((title: string, index: number) => (
                 <td key={index}>
-                  {title != "Type" ? (
+                  {title == "Name" ? (
                     <input type="text" name={props.tableTitlesDictionary[title]} placeholder="No special characters" required className="input-param"></input>
-                  ) : (
+                  ) : title == "Type" ? (
                     <select className="select-device-type input-param" name={props.tableTitlesDictionary[title]}>
                       <option>IAQ</option>
                       <option>Occupancy</option>
                     </select>
+                  ) : (
+                    ""
                   )}
                 </td>
               ))}

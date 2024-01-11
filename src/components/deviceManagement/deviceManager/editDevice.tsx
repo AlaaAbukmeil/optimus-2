@@ -73,14 +73,14 @@ function EditDevice(props: any) {
                         )
                       ) : (
                         <select className="select-device-type input-param" name={props.tableTitleAddDeviceExpectedNames[title]}>
-                          <option>{props.tableTitleAddDeviceExpectedNames[title].toLowerCase() == "true" ? "True" : "False"}</option>
-                          <option>{props.tableTitleAddDeviceExpectedNames[title].toLowerCase() == "false" ? "False" : "True"}</option>
+                          <option>{props.data[props.tableTitleAddDeviceExpectedNames[title]].toLowerCase() == "true" ? "True" : "False"}</option>
+                          <option>{props.data[props.tableTitleAddDeviceExpectedNames[title]].toLowerCase() == "true" ? "False" : "True"}</option>
                         </select>
                       )
                     ) : (
                       <select className="select-device-type input-param" name={props.tableTitleAddDeviceExpectedNames[title]}>
-                        <option>{props.tableTitleAddDeviceExpectedNames[title].toLowerCase() == "occupancy" ? "occupancy" : "iaq"}</option>
-                        <option>{props.tableTitleAddDeviceExpectedNames[title].toLowerCase() == "iaq" ? "iaq" : "occupancy"}</option>
+                        <option>{props.data[props.tableTitleAddDeviceExpectedNames[title]].toLowerCase() == "occupancy" ? "occupancy" : "iaq"}</option>
+                        <option>{props.data[props.tableTitleAddDeviceExpectedNames[title]].toLowerCase() == "occupancy" ? "iaq" : "occupancy"}</option>
                       </select>
                     )}
                   </td>

@@ -23,7 +23,7 @@ function DeviceManager() {
   let tableTitles = Object.keys(tableTitlesDictionary);
 
   let tableTitlesDevice = ["Name", "Type", "_id"];
-
+  let tableTitlesAddDevice = ["Name", "Type"]
   let [data, setData] = useState([]);
   let [addDevice, setAddDevice] = useState(false);
   const [request, setRequestStatus] = useState(false);
@@ -146,7 +146,7 @@ function DeviceManager() {
       {deleteDeviceDisplay && <DeleteLocation data={deleteDeviceInfo} setRequestStatus={setRequestStatus} setError={setError} setDeleteDeviceDisplay={setDeleteDeviceDisplay} setDeleteDeviceInfo={setDeleteDeviceInfo} setRequestCardDisplay={setRequestCardDisplay} setRequestCardMessage={setRequestCardMessage} tableTitlesDevice={tableTitlesDevice} tableTitleAddDeviceExpectedNames={tableTitlesDictionary} error={error} />}
       {addDevice && (
         <div className="device-info-container-1">
-          <AddDevice setRequestStatus={setRequestStatus} setError={setError} setRequestCardDisplay={setRequestCardDisplay} setRequestCardMessage={setRequestCardMessage} tableTitlesDictionary={tableTitlesDictionary} tableTitlesDevice={tableTitlesDevice} error={error} setAddDevice={setAddDevice} setFile={setFile} file={file} />
+          <AddDevice setRequestStatus={setRequestStatus} setError={setError} setRequestCardDisplay={setRequestCardDisplay} setRequestCardMessage={setRequestCardMessage} tableTitlesDictionary={tableTitlesDictionary} tableTitlesDevice={tableTitlesAddDevice} error={error} setAddDevice={setAddDevice} setFile={setFile} file={file} />
         </div>
       )}
     </div>
